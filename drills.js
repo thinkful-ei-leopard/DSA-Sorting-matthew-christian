@@ -183,3 +183,21 @@ return display(list)
 }
 mSort(main());
 console.log(mSort(main()))
+
+//6 bucket sort
+const arr = [1, 5, 6, 2, 8, 5, 1, 9, 3, 2, 10, 50]
+function bucketSort(arr, lowest, highest) {
+  let bucketSort = Array(highest).map(x => 0)
+  for (let i = 0; i < arr.length; i++) {
+    bucketSort[arr[i] - lowest]++;
+  }
+  let j = 0;
+  for (let i = 0; i < bucketSort.length;) {
+    while (bucketSort[i] > 0) {
+      arr[j++] = i + lowest;
+    }
+    i++
+  }
+  return arr;
+}
+console.log(bucketSort(arr, 1, 50))
