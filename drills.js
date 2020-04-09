@@ -133,3 +133,30 @@ function main() {
 }
 
 main();
+
+//5 linked list
+const LinkedList = require('./linked-list')
+
+function mergeSort(list) {
+  if (list.findLength() <= 1)
+    return list;
+
+  const middle = Math.floor(array.length /2)
+  let list1 = new list(); 
+  list1.insert(10)
+  list1.insert(20)
+  list1.insert(3)
+  list1.insert(6)
+  let list2 = new list();
+
+  for(let i=0; i < middle; i++) {
+    list1.insertLast();
+  }
+  for(let i=0; i < middle; i++) {
+    list2.insertLast();
+  }
+  list1 = mergeSort(list1);
+  list2 = mergeSort(list2);
+  return merge(list1, list2);
+}
+
