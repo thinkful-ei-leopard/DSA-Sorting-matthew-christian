@@ -73,6 +73,42 @@ function swap(array, i, j) {
   array[j] = temp;
 }
 
+//4
+function mSort(array) {
+  if(array.length <= 1) {
+    return array;
+  }
+
+  const middle = Math.floor(array.length / 2);
+  let left = array.slice(0, middle);
+  let right = array.slice(middle, array.length);
+
+  left = mSort(left);
+  right = mSort(right);
+  return merge(left, right, array);
+}
+
+function merge(left, right, array) {
+  let leftIndex = 0;
+  let rightIndex = 0;
+  let outputIndex = 0;
+  while(leftIndex < left.length && rightIndex < right.length) {
+    if(left[leftIndex] < right[rightIndex]) {
+      array[outputIndex++] = left[leftIndex++];
+    } else {
+      array[outputIndex++] = right[rightIndex++];
+    }
+  }
+
+  for(let i = leftIndex; i < left.length; i++) {
+    array[outputIndex++] = left[i];
+  }
+
+  for(let i = rightIndex; i < right.length; i++) {
+    array[outputIndex++] = right[i];
+  }
+  return array;
+}
 
 function main() {
   let dataSet = [
@@ -87,7 +123,13 @@ function main() {
     46, 27, 22, 87, 49, 83, 6, 39, 42, 51, 
     54, 84, 34, 53, 78, 40, 14, 5
   ];
-  console.log(qSort(dataSet));
+  //3
+  //console.log(qSort(dataSet));
+
+  //4
+  //console.log(mSort(dataSet));
+
+  
 }
 
 main();
