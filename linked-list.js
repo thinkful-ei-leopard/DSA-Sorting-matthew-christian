@@ -140,9 +140,11 @@ class LinkedList {
     }
     return arr;
   }
+  mSort() {
+      return this;
+  }
 
 }
 
 
 module.exports = LinkedList;
-module.exports = _Node;

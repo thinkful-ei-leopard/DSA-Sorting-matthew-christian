@@ -123,40 +123,63 @@ function main() {
     46, 27, 22, 87, 49, 83, 6, 39, 42, 51, 
     54, 84, 34, 53, 78, 40, 14, 5
   ];
-  //3
-  //console.log(qSort(dataSet));
+ // 3
+  // console.log(qSort(dataSet));
 
   //4
-  //console.log(mSort(dataSet));
+    console.log(mSort(dataSet));
 
   
 }
 
-main();
+// main();
 
 //5 linked list
 const LinkedList = require('./linked-list')
 
-function mergeSort(list) {
-  if (list.findLength() <= 1)
-    return list;
+// function mergeSort(list) {
+//   if (list.findLength() <= 1)
+//     return list;
 
-  const middle = Math.floor(array.length /2)
-  let list1 = new list(); 
-  list1.insert(10)
-  list1.insert(20)
-  list1.insert(3)
-  list1.insert(6)
-  let list2 = new list();
+//   const middle = Math.floor(array.length /2)
+//   let list1 = new list(); 
+//   list1.insert(10)
+//   list1.insert(20)
+//   list1.insert(3)
+//   list1.insert(6)
+//   let list2 = new list();
 
-  for(let i=0; i < middle; i++) {
-    list1.insertLast();
+//   for(let i=0; i < middle; i++) {
+//     list1.insertLast();
+//   }
+//   for(let i=0; i < middle; i++) {
+//     list2.insertLast();
+//   }
+//   list1 = mergeSort(list1);
+//   list2 = mergeSort(list2);
+//   return merge(list1, list2);
+// }
+
+const display = LinkedList => {
+  let node = LinkedList.head;
+  let result = [];
+  while (node !== null) {
+    result.push(node.value);
+    node = node.next;
   }
-  for(let i=0; i < middle; i++) {
-    list2.insertLast();
-  }
-  list1 = mergeSort(list1);
-  list2 = mergeSort(list2);
-  return merge(list1, list2);
+  return result;
+};
+
+function main() {
+const list = new LinkedList();
+
+list.insertLast(1);
+list.insertLast(3);
+list.insertLast(2);
+list.insertLast(4);
+list.insertLast(10);
+list.insertLast(7);
+return display(list)
 }
-
+mSort(main());
+console.log(mSort(main()))
